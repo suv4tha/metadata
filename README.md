@@ -1,3 +1,4 @@
+
 # Metadata Privacy Risk Analyzer
 
 🔍 A simple yet effective tool to inspect hidden metadata in files and identify potential privacy risks. This tool supports **images (JPEG, PNG), PDFs, and audio files (MP3, WAV)** and highlights sensitive metadata like GPS location, device information, author details, and artist info.
@@ -34,81 +35,90 @@
    ```bash
    git clone https://github.com/suv4tha/metadata.git
    cd metadata
-Create and activate a Python virtual environment:
+````
+````
+2. Create and activate a Python virtual environment:
 
-bash
-Copy
-Edit
-python -m venv venv
-# Windows:
-venv\Scripts\activate
-# Linux / macOS:
-source venv/bin/activate
-Install required dependencies:
+   ```bash
+   python -m venv venv
+   # Windows:
+   venv\Scripts\activate
+   # Linux / macOS:
+   source venv/bin/activate
+   ```
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Usage
+3. Install required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## Usage
+
 Run the app:
 
-bash
-Copy
-Edit
+```bash
 python metadata_tool.py
-This will launch a local web interface (usually at http://127.0.0.1:7860) where you can upload your file and inspect metadata risks instantly.
+```
 
-How It Works
-The app detects the file type based on its extension.
+This will launch a local web interface (usually at `http://127.0.0.1:7860`) where you can upload your file and inspect metadata risks instantly.
 
-Depending on the file type, it uses appropriate libraries to extract metadata:
+---
 
-Images: exifread
+## How It Works
 
-PDFs: PyPDF2
+* The app detects the file type based on its extension.
+* Depending on the file type, it uses appropriate libraries to extract metadata:
 
-Audio: mutagen
+  * Images: `exifread`
+  * PDFs: `PyPDF2`
+  * Audio: `mutagen`
+* It analyzes metadata keys for sensitive information like GPS coordinates, device details, author info, and more.
+* The results and any flagged privacy risks are displayed in an easy-to-understand format on the web UI.
 
-It analyzes metadata keys for sensitive information like GPS coordinates, device details, author info, and more.
+---
 
-The results and any flagged privacy risks are displayed in an easy-to-understand format on the web UI.
+## Dependencies
 
-Dependencies
-Python 3.7+
-
-gradio
-
-exifread
-
-PyPDF2
-
-mutagen
+* Python 3.7+
+* [gradio](https://gradio.app/)
+* [exifread](https://pypi.org/project/ExifRead/)
+* [PyPDF2](https://pypi.org/project/PyPDF2/)
+* [mutagen](https://pypi.org/project/mutagen/)
 
 Install all with:
 
-bash
-Copy
-Edit
+```bash
 pip install gradio exifread PyPDF2 mutagen
-Limitations & Future Work
-Currently supports only a limited set of file types (images, PDFs, audio).
+```
 
-Does not modify or remove metadata; only reports risks.
+---
 
-Could be extended with:
+## Limitations & Future Work
 
-Additional file types (video, documents)
+* Currently supports only a limited set of file types (images, PDFs, audio).
+* Does not modify or remove metadata; only reports risks.
+* Could be extended with:
 
-Metadata removal or redaction
+  * Additional file types (video, documents)
+  * Metadata removal or redaction
+  * Batch processing support
+  * Detailed risk scoring and recommendations
 
-Batch processing support
+---
 
-Detailed risk scoring and recommendations
+## License
 
-License
 This project is open-source and available under the MIT License.
 
-Contact
-Created by suv4tha.
+---
+
+## Contact
+
+Created by [suv4tha](https://github.com/suv4tha).
 Feel free to open issues or submit pull requests for improvements!
+
+```
+
